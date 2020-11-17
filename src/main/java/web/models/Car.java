@@ -1,11 +1,12 @@
-package web.config.models;
+package web.models;
 
 public class Car {
     private String model;
     private String color;
     private long series;
 
-    public Car() { }
+    public Car() {
+    }
 
     public Car(String model, String color, long series) {
         this.model = model;
@@ -16,9 +17,7 @@ public class Car {
     public String getModel() {
         return model;
     }
+    public String getColor() { return color; }
+    public long getSeries() { return series; }
 
-    @Override
-    public String toString() {
-        return model + " " + color + " " + series;
-    }
 }

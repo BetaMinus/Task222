@@ -2,9 +2,27 @@
 <html lang="en" xmlns:th="http://thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Cars List</title>
+    <title>CarsList</title>
 </head>
 <body>
-<a th:text="${carList}"> car </a>
+
+<div class="container">
+    <div th:if="${not #lists.isEmpty(carsList)}">
+        <h2>Car Table</h2>
+            <table class="table table-striped">
+                <tr>
+                    <th> model</th>
+                    <th> color</th>
+                    <th> series</th>
+                </tr>
+                    <tr th:each="car : ${carsList}">
+                    <td th:text="${car.getModel()}">model</td>
+                    <td th:text="${car.getColor()}">color</td>
+                    <td th:text="${car.getSeries()}">series</td>
+                </tr>
+            </table>
+    </div>
+</div>
+
 </body>
 </html>
